@@ -7,25 +7,38 @@ import random
 
 
 def inicio():
-    choices = ['Piedra','Papel','Tijera']
-   # player_opc = 'papel'
+    opciones = ['piedra', 'papel', 'tijeras']
     choice = request.json.get('data')
-    opc_pc = random.choice(choices) #genero opcion al azar
+    opc_pc = random.choice(opciones)
+    
+    if choice == 'papel' and opc_pc == 'piedra':
+        resultado = "ganaste"
+    elif choice == 'papel' and opc_pc == 'tijeras':
+        resultado = "perdiste"
+    elif choice == 'papel' and opc_pc == 'papel':
+        resultado = "empate"
+
+    elif choice == 'piedra' and opc_pc == 'tijeras':
+        resultado = "ganaste"
+    elif choice == 'piedra' and opc_pc == 'papel':
+        resultado = "perdiste"
+    elif choice == 'piedra' and opc_pc == 'piedra':
+        resultado = "empate"
+        
+    elif choice == 'tijeras' and opc_pc == 'papel':
+        resultado = "ganaste"
+    elif choice == 'tijeras' and opc_pc == 'piedra':
+        resultado = "perdiste"
+    elif choice == 'tijeras' and opc_pc == 'tijeras':
+        resultado = "empate"
+    
+    else:
+        resultado = "Elección no válida. Por favor, elige entre piedra, papel o tijeras."
     
     result = {
         "player_opc": choice,
         "opc_pc": opc_pc,
-        "result": "ganaste" #ahora valido si esa funcion se cumple
-            if choice == 'papel' and opc_pc == 'piedra' else
-            "perdiste" if choice == "papel" and opc_pc == 'tijeras' else
-            "empate"
-
-            if choice == 'piedra' and opc_pc == 'tijeras' else
-            "perdiste" if choice == "piedra" and opc_pc == 'papel' else
-            "empate"
-            
-            if choice == 'tijeras' and opc_pc == 'papel' else
-            "perdiste" if choice =="tijeras" and opc_pc =='piedra'  else
-            "empate"
+        "result": resultado
     }
+    
     return result
