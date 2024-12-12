@@ -33,7 +33,7 @@ def inicio():
         resultado = "empate"
     
     else:
-        resultado = "Elección no válida. Por favor, elige entre piedra, papel o tijeras."
+        resultado = "error ,elige entre piedra, papel o tijeras."
     
     result = {
         "player_opc": choice,
