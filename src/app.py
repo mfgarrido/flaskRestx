@@ -14,4 +14,4 @@ api.add_namespace(juego_np,path='/juego')
 api.add_namespace(np_pingpong, path='/pingpong')
 
 if __name__=="__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=5000)
