@@ -32,4 +32,4 @@ def inicio():
     }
     
     return result
-    return result
+   
