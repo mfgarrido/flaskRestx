@@ -5,9 +5,9 @@ import random
 #funcion jurgo
 
 def inicio():
-    opc = ['Piedra','Papel','Tijera']
+    choices = ['Piedra','Papel','Tijera']
     player_opc = 'papel'
-    opc_pc = random.choice(opc) #genero opcion al azar
+    opc_pc = random.choice(choices) #genero opcion al azar
     
     result = {
         "player_opc": player_opc,
