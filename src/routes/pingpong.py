@@ -7,4 +7,4 @@ np_pingpong = Namespace('pingpong',description="Ping Pong")
 @np_pingpong.route('/')
 class PingPong(Resource):
     def post(self):
-        return pingpong()
+        return pingpong(),200

@@ -8,4 +8,4 @@ juego_np = Namespace('juego',description='Piedra, Papel o Tijeras')
 
 class inicioJuego(Resource):
     def post(self):
-        return inicio()
+        return inicio(),200
